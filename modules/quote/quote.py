@@ -83,23 +83,23 @@ class Quote:
         else:
             i = 0
             result = ""
-			for i in range(1, len(self.quoteList):
+            for i in range(1, len(self.quoteList)):
                 if (infos['args'][0] in self.quoteList[i][2]):
                     result = result + str(i) + ", "
             if (result == ""):
                 Morphux.sendMessage("No quote found.", infos['nick']);
             else:
                 Morphux.sendMessage("Quote(s) found: " + result[:-2], infos['nick']);
-	def searchAuthor(self, Morphux, infos):
+    def searchAuthor(self, Morphux, infos):
         if (len(infos['args']) == 0):
             Morphux.sendMessage("Need an author", infos['nick']);
-		else:
-			i = 0;
-			result = ""
-			author = infos['args'][0].tolower()
-			for i in range(1, len(self.quoteList):
-				if author in self.quoteList[i][1]:
-					result += str(i) + ", "
+        else:
+            i = 0;
+            result = ""
+            author = infos['args'][0].tolower()
+            for i in range(1, len(self.quoteList)):
+                if author in self.quoteList[i][1]:
+                    result += str(i) + ", "
             if (result == ""):
                 Morphux.sendMessage("No quote found for {}.".format(infos['args'][0]), infos['nick']);
             else:
